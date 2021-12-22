@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html x-data="{ dark: false }" :class="dark ? 'dark' : '' " lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mostafa Miri | portfolio page with tailwind and js</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/fontawesome.min.css" />
+    <link rel="stylesheet" href="css/isolde.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
+
+    <script
+      defer
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
+    <script
+      defer
+      src="https://unpkg.com/swiper@7/swiper-bundle.min.js"
+    ></script>
+    <script defer type="module">
+      import isolde from "./js/isolde.js";
+      const isoldejs = new isolde();
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
+      defer
+    ></script>
+    <script defer src="js/app.js"></script>
+    <script defer src="js/all.min.js"></script>
+    <script defer src="js/purecounter.js"></script>
+  </head>
+  <body class="debug-screens" dir="rtl">
+    <!-- begin navbar -->
+    <nav
+      class="fixed top-0 left-0 right-0 flex flex-row justify-between px-16 py-8 text-white  nav-scrolled"
+      id="nav"
+    >
+      <div class="hamburger-box">
+        <input type="checkbox" class="hamburger-checkbox" id="checkbox" />
+        <div class="hamburger-btn">
+          <div></div>
+        </div>
+      </div>
+      <ul
+        class="fixed flex-col items-center justify-center hidden w-4/5 gap-6 py-8 bg-gray-800  lg:w-auto lg:justify-start overflow-y-scroll-scroll nav__list lg:bg-transparent lg:flex lg:flex-row lg:static top-20 lg:py-0 left-24"
+      >
+        <li class="nav__item-active">
+          <a href="#" class="nav__item text-primaryColor">خانه</a>
+        </li>
+        <li class="">
+          <a href="#about" class="nav__item">درباره ما</a>
+        </li>
+        <li class="">
+          <a href="#skills" class="nav__item">مهارت ها</a>
+        </li>
+        <li class="">
+          <a href="#services" class="nav__item">خدمات</a>
+        </li>
+        <li class="">
+          <a href="#achievements" class="nav__item">دستاورد ها</a>
+        </li>
+        <li class="">
+          <a href="#portfolio" class="nav__item">نمونه کارها</a>
+        </li>
+        <li class="">
+          <a href="#advantages" class="nav__item">برتری ها</a>
+        </li>
+        <li class="">
+          <a href="#team" class="nav__item">تیم</a>
+        </li>
+        <li class="">
+          <a href="#comments" class="nav__item">دیدگاه ها</a>
+        </li>
+        <li class="">
+          <a href="#blog" class="nav__item">بلاگ</a>
+        </li>
+        <li class="">
+          <a href="#information" class="nav__item">آدرس</a>
+        </li>
+        <li class="">
+          <a href="#connection" class="nav__item">تماس</a>
+        </li>
+      </ul>
+      <h1 class="m-0">
+        <a href="#"
+          ><img class="logo-img" src="img/logo-light.png" alt="one pucture"
+        /></a>
+      </h1>
+    </nav>
+    <!-- end navbar -->
+
+    <!-- begin header -->
+    <header
+      class="relative flex flex-col h-screen gap-8 pt-48 text-center text-white bg-center bg-cover "
+    >
+      <p class="text-2xl text-white">ما خلاق هستیم</p>
+      <h2 class="text-5xl md:text-6xl">شرکت دیجیتالی خلاق</h2>
+      <p class="self-center w-1/3 text-lg text-white">
+        با بیش از ۱۰ سال سابقه کار و فعال حوزه استارت آپ و طراح بیش از ۵۰ سایت
+        هستم.
+      </p>
+      <div class="mt-3">
+        <a href="#" class="mx-2 bg-white btn text-primaryColor">آشنایی بیشتر</a>
+        <a href="#" class="mx-2 btn">شروع کنید</a>
+      </div>
+    </header>
+    <!-- end header -->
+
+    <!-- begin about section -->
+    <section id="about">
+      <div class="container">
+        <div class="title-box">
+          <h2>به شرکت ما خوش آمدید</h2>
+          <p class="title-text">ما کیستیم و چه کاری انجام میدهیم</p>
+          <p class="w-3/4 mx-auto mt-12">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
+            کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+          </p>
+        </div>
+        <div class="flex flex-col justify-around gap-5 md:flex-row">
+          <div class="flex flex-col items-center gap-5 px-3 py-6">
+            <span
+              class="flex justify-center w-20 h-20 border-2 border-gray-100 rounded-full "
+              ><i class="far fa-pencil-paintbrush"></i
+            ></span>
+            <h3>طراحی خلاقانه</h3>
+            <p>
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است. چاپگرها و متون بلکه نیز هستند.
+            </p>
+          </div>
+          <div class="flex flex-col items-center gap-5 px-3 py-6">
+            <span
+              class="flex justify-center w-20 h-20 border-2 border-gray-100 rounded-full "
+              ><i class="far fa-crown"></i
+            ></span>
+            <h3>برند سازی</h3>
+            <p>
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است. چاپگرها و متون بلکه نیز هستند.
+            </p>
+          </div>
+          <div class="flex flex-col items-center gap-5 px-3 py-6">
+            <span
+              class="flex justify-center w-20 h-20 border-2 border-gray-100 rounded-full "
+              ><i class="far fa-desktop"></i
+            ></span>
+            <h3>طراحی وبسایت</h3>
+            <p>
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است. چاپگرها و متون بلکه نیز هستند.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end about section -->
+
+    <!-- begin skills section -->
+    <section id="skills" class="flex flex-col lg:flex-row">
+      <div
+        class="bg-center bg-cover lg:w-1/2 h-96 lg:h-auto skills__right-side"
+      ></div>
+      <div class="p-8 bg-gray-100 lg:w-1/2 skills__left-side">
+        <div class="flex flex-col gap-3 px-16 py-20 bg-white shadow">
+          <h2>تلاش ما همواره ارائه خدمات باکیفیت است.</h2>
+          <p class="mb-3">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
+            کاربردهای
+          </p>
+          <div class="mt-6">
+            <h5>طراحی وب</h5>
+            <div class="w-full h-5 mt-3 bg-gray-200 rounded-full">
+              <div class="w-3/4 h-5 rounded-full primary-gradient"></div>
+            </div>
+          </div>
+          <div class="mt-6">
+            <h5>برند سازی</h5>
+            <div class="w-full h-5 mt-3 bg-gray-200 rounded-full">
+              <div class="w-2/5 h-5 rounded-full primary-gradient"></div>
+            </div>
+          </div>
+          <div class="mt-6">
+            <h5>توسعه</h5>
+            <div class="w-full h-5 mt-3 bg-gray-200 rounded-full">
+              <div class="w-11/12 h-5 rounded-full primary-gradient"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end skills section -->
+
+    <!-- begin services section -->
+    <section id="services">
+      <div class="container">
+        <div class="title-box">
+          <h2>خدمات ما</h2>
+          <p class="title-text">خدماتی که ارائه می‌دهیم</p>
+        </div>
+        <div
+          class="flex flex-col justify-around  md:flex-row md:border-bottom md:pb-7 md:mb-7"
+        >
+          <div class="flex flex-col px-10 my-6 gap-7">
+            <i class="far fa-pencil-paintbrush"></i>
+            <h3>طراحی خلاقانه</h3>
+            <p>
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است. چاپگرها و متون بلکه نیز هستند.
+            </p>
+          </div>
+          <div class="flex flex-col px-10 my-6 gap-7 md:border-x">
+            <i class="far fa-crown"></i>
+            <h3>تجربه کاربر</h3>
+            <p>
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است. چاپگرها و متون بلکه نیز هستند.
+            </p>
+          </div>
+          <div class="flex flex-col px-10 my-6 gap-7">
+            <i class="far fa-ruler-triangle"></i>
+            <h3>سفارشی سازی</h3>
+            <p>
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است. چاپگرها و متون بلکه نیز هستند.
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col justify-around md:flex-row">
+          <div class="flex flex-col px-10 my-6 gap-7">
+            <i class="far fa-smile"></i>
+            <h3>مناسب رتینا</h3>
+            <p>
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است. چاپگرها و متون بلکه نیز هستند.
+            </p>
+          </div>
+          <div class="flex flex-col px-10 my-6 gap-7 md:border-x">
+            <i class="far fa-tablet"></i>
+            <h3>کاملا واکنشگرا</h3>
+            <p>
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است. چاپگرها و متون بلکه نیز هستند.
+            </p>
+          </div>
+          <div class="flex flex-col px-10 my-6 gap-7">
+            <i class="far fa-desktop"></i>
+            <h3>طراحی مدرن</h3>
+            <p>
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است. چاپگرها و متون بلکه نیز هستند.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end services section -->
+
+    <!-- begin achievements section -->
+    <section id="achievements" class="bg-fixed bg-center bg-cover">
+      <div class="container">
+        <div
+          class="flex flex-col justify-around gap-12 text-white  md:gap-0 md:flex-row"
+        >
+          <div class="flex flex-col gap-3 md:gap-11">
+            <i class="far fa-smile"></i>
+            <h3
+              class="text-6xl purecounter"
+              data-purecounter-start="0"
+              data-purecounter-end="93"
+              data-purecounter-once="false"
+            >
+              0
+            </h3>
+            <h3>مشتریان راضی</h3>
+          </div>
+          <div class="flex flex-col gap-3 md:gap-11">
+            <i class="far fa-file-check"></i>
+            <h3
+              class="text-6xl purecounter"
+              data-purecounter-start="0"
+              data-purecounter-end="183"
+              data-purecounter-once="false"
+            >
+              0
+            </h3>
+            <h3>پروژه انجام شده</h3>
+          </div>
+          <div class="flex flex-col gap-3 md:gap-11">
+            <i class="far fa-file-alt"></i>
+            <h3
+              class="text-6xl purecounter"
+              data-purecounter-start="0"
+              data-purecounter-end="410"
+              data-purecounter-once="false"
+            >
+              0
+            </h3>
+            <h3>دریافت فایل</h3>
+          </div>
+          <div class="flex flex-col gap-3 md:gap-11">
+            <i class="far fa-code"></i>
+            <h3
+              class="text-6xl purecounter"
+              data-purecounter-start="0"
+              data-purecounter-end="2150"
+              data-purecounter-once="false"
+            >
+              0
+            </h3>
+            <h3>خط کد</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end achievements section -->
+
+    <!-- begin portfolio section -->
+    <section id="portfolio" class="">
+      <div class="container px-0">
+        <div class="title-box">
+          <h2>نمونه کارهای ما</h2>
+          <p class="title-text">پروژه های اخیر</p>
+        </div>
+        <div class="mb-14">
+          <ul
+            class="flex flex-row gap-8 px-6 py-3 mx-auto rounded-full  w-min border-gray"
+          >
+            <li class="">
+              <a
+                class="px-4 py-2 rounded-full cursor-pointer is-active"
+                data-isolde-link="all"
+                >همه</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="px-4 py-2 rounded-full cursor-pointer"
+                data-isolde-link="brand"
+                >برند</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="px-4 py-2 rounded-full cursor-pointer"
+                data-isolde-link="design"
+                >طراحی</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="px-4 py-2 rounded-full cursor-pointer"
+                data-isolde-link="graphic"
+                >گرافیک</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div id="isolde" class="flex flex-row flex-wrap isolde-default">
+          <div class="w-1/4 p-1 section-portfolio__card" data-isolde-el="brand">
+            <img
+              class=""
+              src="img/portfolio/1-1-440x440.jpg"
+              alt="portfolio pucture"
+            />
+            <div class="section-portfolio__card__detail"></div>
+          </div>
+          <div
+            class="w-1/4 p-1 section-portfolio__card"
+            data-isolde-el="design"
+          >
+            <img
+              class=""
+              src="img/portfolio/2-440x440.jpg"
+              alt="portfolio pucture"
+            />
+            <div class="section-portfolio__card__detail"></div>
+          </div>
+          <div
+            class="w-1/4 p-1 section-portfolio__card"
+            data-isolde-el="brand design"
+          >
+            <img
+              class=""
+              src="img/portfolio/3-440x440.jpg"
+              alt="portfolio pucture"
+            />
+            <div class="section-portfolio__card__detail"></div>
+          </div>
+          <div class="w-1/4 p-1 section-portfolio__card" data-isolde-el="brand">
+            <img
+              class=""
+              src="img/portfolio/4-440x440.jpg"
+              alt="portfolio pucture"
+            />
+            <div class="section-portfolio__card__detail"></div>
+          </div>
+          <div
+            class="w-1/4 p-1 section-portfolio__card"
+            data-isolde-el="graphic"
+          >
+            <img
+              class=""
+              src="img/portfolio/5-440x440.jpg"
+              alt="portfolio pucture"
+            />
+            <div class="section-portfolio__card__detail"></div>
+          </div>
+          <div
+            class="w-1/4 p-1 section-portfolio__card"
+            data-isolde-el="graphic"
+          >
+            <img
+              class=""
+              src="img/portfolio/6-440x440.jpg"
+              alt="portfolio pucture"
+            />
+            <div class="section-portfolio__card__detail"></div>
+          </div>
+          <div
+            class="w-1/4 p-1 section-portfolio__card"
+            data-isolde-el="graphic design"
+          >
+            <img
+              class=""
+              src="img/portfolio/7-440x440.jpg"
+              alt="portfolio pucture"
+            />
+            <div class="section-portfolio__card__detail"></div>
+          </div>
+          <div class="w-1/4 p-1 section-portfolio__card" data-isolde-el="brand">
+            <img
+              class=""
+              src="img/portfolio/8-440x440.jpg"
+              alt="portfolio pucture"
+            />
+            <div class="section-portfolio__card__detail"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end portfolio section -->
+
+    <!-- begin advantages section -->
+    <section id="advantages" class="flex flex-col lg:flex-row">
+      <div class="p-8 bg-gray-100 lg:w-1/2">
+        <div class="flex flex-col gap-3 px-16 py-20 bg-white shadow">
+          <h2>چرا ما را انتخاب کنید؟</h2>
+          <p class="mb-3">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+            استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در
+            ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و
+            کاربردهای
+          </p>
+          <div class="w-full mx-auto">
+            <div class="w-full overflow-hidden tab">
+              <input
+                class="absolute opacity-0"
+                id="tab-single-one"
+                type="radio"
+                name="tabs2"
+                checked
+              />
+              <label
+                class="block p-5 font-bold leading-normal rounded-full cursor-pointer  text-large"
+                for="tab-single-one"
+                >شناسایی منبع مشکل</label
+              >
+              <div class="overflow-hidden leading-normal tab-content">
+                <p class="p-5">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                  استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
+                  مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی.
+                </p>
+              </div>
+            </div>
+            <div class="w-full overflow-hidden tab">
+              <input
+                class="absolute opacity-0"
+                id="tab-single-two"
+                type="radio"
+                name="tabs2"
+              />
+              <label
+                class="block p-5 font-bold leading-normal rounded-full cursor-pointer  text-large"
+                for="tab-single-two"
+                >حفاظت از نام تجاری</label
+              >
+              <div class="overflow-hidden leading-normal tab-content">
+                <p class="p-5">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                  استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
+                  مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی.
+                </p>
+              </div>
+            </div>
+            <div class="w-full overflow-hidden tab">
+              <input
+                class="absolute opacity-0"
+                id="tab-single-three"
+                type="radio"
+                name="tabs2"
+              />
+              <label
+                class="block p-5 font-bold leading-normal rounded-full cursor-pointer  text-large"
+                for="tab-single-three"
+                >ما خلاق و حرفه‌ای هستیم</label
+              >
+              <div class="overflow-hidden leading-normal tab-content">
+                <p class="p-5">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                  استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و
+                  مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="bg-center bg-cover h-96 lg:h-auto lg:w-1/2 advantages__left-side"
+      ></div>
+    </section>
+    <!-- end advantages section -->
+
+    <!-- begin team section -->
+    <section id="team" class="">
+      <div class="container">
+        <div class="title-box">
+          <h2>تیم ما</h2>
+          <p class="title-text">تیمی با مهارت و تخصص</p>
+        </div>
+        <div class="">
+          <div class="flex flex-col gap-10 mb-10 lg:flex-row md:mb-12">
+            <div class="flex flex-row gap-5 p-2 rounded-full pl-7 border-blue">
+              <div class="self-center w-80">
+                <img src="img/1-2-200x200.jpg" class="rounded-full" />
+              </div>
+              <div class="flex flex-col items-start gap-2 py-5 pl-5">
+                <h5>بیل گیتس</h5>
+                <p class="text-primaryColor">طراح رابط کاربری</p>
+                <p class="text-justify">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                  استفاده از طراحان گرافیک است.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-row gap-5 p-2 rounded-full pl-7 border-blue">
+              <div class="self-center w-80">
+                <img src="img/2-2-200x200.jpg" class="rounded-full" />
+              </div>
+              <div class="flex flex-col items-start gap-2 py-5 pl-5">
+                <h5>بیل گیتس</h5>
+                <p class="text-primaryColor">طراح رابط کاربری</p>
+                <p class="text-justify">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                  استفاده از طراحان گرافیک است.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-10 lg:flex-row">
+            <div class="flex flex-row gap-5 p-2 rounded-full pl-7 border-blue">
+              <div class="self-center w-80">
+                <img src="img/2-2-200x200.jpg" class="rounded-full" />
+              </div>
+              <div class="flex flex-col items-start gap-2 py-5 pl-5">
+                <h5>بیل گیتس</h5>
+                <p class="text-primaryColor">طراح رابط کاربری</p>
+                <p class="text-justify">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                  استفاده از طراحان گرافیک است.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-row gap-5 p-2 rounded-full pl-7 border-blue">
+              <div class="self-center w-80">
+                <img src="img/3-1-200x200.jpg" class="rounded-full" />
+              </div>
+              <div class="flex flex-col items-start gap-2 py-5 pl-5">
+                <h5>بیل گیتس</h5>
+                <p class="text-primaryColor">طراح رابط کاربری</p>
+                <p class="text-justify">
+                  لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                  استفاده از طراحان گرافیک است.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end team section -->
+
+    <!-- begin comments section -->
+    <section id="comments" class="text-white bg-fixed bg-center bg-cover">
+      <div class="container lg:w-2/3">
+        <div class="my-5 swiper">
+          <div class="swiper-wrapper">
+            <div class="flex flex-col justify-center gap-5 swiper-slide">
+              <img
+                src="img/1-2-200x200.jpg"
+                class="self-center w-1/6 rounded-full"
+              />
+              <h5>علی احمدی</h5>
+              <p class="text-primaryColor">طراح رابط کاربری</p>
+              <p class="mt-3 text-white">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                استفاده از طراحان گرافیک است. لورم ایپسوم متن ساختگی با تولید
+                سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+              </p>
+            </div>
+            <div class="flex flex-col justify-center gap-5 swiper-slide">
+              <img
+                src="img/2-2-200x200.jpg"
+                class="self-center w-1/6 rounded-full"
+              />
+              <h5>علی احمدی</h5>
+              <p class="text-primaryColor">طراح رابط کاربری</p>
+              <p class="mt-3 text-white">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                استفاده از طراحان گرافیک است. لورم ایپسوم متن ساختگی با تولید
+                سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+              </p>
+            </div>
+            <div class="flex flex-col justify-center gap-5 swiper-slide">
+              <img
+                src="img/3-1-200x200.jpg"
+                class="self-center w-1/6 rounded-full"
+              />
+              <h5>علی احمدی</h5>
+              <p class="text-primaryColor">طراح رابط کاربری</p>
+              <p class="mt-3 text-white">
+                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+                استفاده از طراحان گرافیک است. لورم ایپسوم متن ساختگی با تولید
+                سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.
+              </p>
+            </div>
+          </div>
+          <!-- If we need navigation buttons -->
+          <div class="slider-btns swiper-button-prev"></div>
+          <div class="slider-btns swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+    <!-- end comments section -->
+
+    <!-- begin blog section -->
+    <section id="blog">
+      <div class="container px-0 lg:px-12">
+        <div class="title-box">
+          <h2>بلاگ ما</h2>
+          <p class="title-text">آخرین اخبار</p>
+        </div>
+        <div class="flex flex-col justify-around gap-5 md:flex-row">
+          <div class="flex flex-col gap-6 p-3 pb-6 rounded shadow-lg">
+            <img class="" src="img/3-3-350x233.jpg" />
+            <h5>لورم ایپسوم متن ساختگی</h5>
+            <p class="text-justify">
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است.
+            </p>
+            <p class="mt-3 text-sm">توسط : وحید 24 آذر 1397</p>
+          </div>
+          <div class="flex flex-col gap-6 p-3 pb-6 rounded shadow-lg">
+            <img class="" src="img/2-4-350x233.jpg" />
+            <h5>لورم ایپسوم متن ساختگی</h5>
+            <p class="text-justify">
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است.
+            </p>
+            <p class="mt-3 text-sm">توسط : وحید 24 آذر 1397</p>
+          </div>
+          <div class="flex flex-col gap-6 p-3 pb-6 rounded shadow-lg">
+            <img class="" src="img/1-4-350x233.jpg" />
+            <h5>لورم ایپسوم متن ساختگی</h5>
+            <p class="text-justify">
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است.
+            </p>
+            <p class="mt-3 text-sm">توسط : وحید 24 آذر 1397</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end blog section -->
+
+    <!-- begin information section -->
+    <section id="information" class="flex flex-col lg:flex-row">
+      <div
+        class="flex flex-col px-20 py-32 bg-center bg-cover  lg:w-1/2 gap-9 information__right-side"
+      >
+        <div class="flex flex-row gap-8">
+          <i class="far fa-mobile"></i>
+          <div>
+            <h5 class="">تلفن :</h5>
+            <p class="text-white">۲۷۸۴ ۸۴۲ ۹۳۹ ۹۸+</p>
+          </div>
+        </div>
+        <div class="flex flex-row gap-8">
+          <i class="far fa-envelope"></i>
+          <div>
+            <h5 class="">ایمیل :</h5>
+            <p class="text-white">email@youraddress.com</p>
+            <p class="text-white">email_support@youraddress.com</p>
+          </div>
+        </div>
+        <div class="flex flex-row gap-8">
+          <i class="far fa-location"></i>
+          <div>
+            <h5 class="">آدرس :</h5>
+            <p class="text-white">
+              تهران، خیابان ولیعصر، فلکه بازار، جنب بانک ملت، ساختمان گلشن، طبقه
+              678، واحد 53
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="lg:w-1/2 h-96 lg:h-auto information__left-side"
+        id="map"
+      ></div>
+    </section>
+    <!-- end information section -->
+
+    <!-- begin connection section -->
+    <section id="connection">
+      <div class="container">
+        <div class="title-box">
+          <h2>تماس با ما</h2>
+          <p class="title-text">با ما در ارتباط باشید</p>
+        </div>
+        <form action="" class="flex flex-col p-6 mx-auto gap-7 lg:w-3/5">
+          <div class="flex flex-row gap-5">
+            <input type="text" class="inline w-1/2" placeholder="نام *" />
+            <input type="text" class="inline w-1/2" placeholder="ایمیل *" />
+          </div>
+          <input type="text" class="w-full" placeholder="موضوع" />
+          <textarea
+            name=""
+            id=""
+            cols="25"
+            rows="10"
+            placeholder="پیام *"
+          ></textarea>
+          <input
+            type="submit"
+            class="cursor-pointer primary-gradient"
+            value="ارسال پیام"
+          />
+        </form>
+      </div>
+    </section>
+    <!-- end connection section -->
+
+    <footer>
+      <div class="container py-16">
+        <div class="flex flex-col items-center mx-auto gap-7">
+          <img class="w-min" src="img/logo-light.png" alt="one pucture" />
+          <div class="flex flex-row gap-4">
+            <span
+              class="flex justify-center w-10 h-10 bg-white rounded-full  bg-opacity-10"
+              ><i class="small-icon fab fa-linkedin"></i
+            ></span>
+            <span
+              class="flex justify-center w-10 h-10 bg-white rounded-full  bg-opacity-10"
+              ><i class="small-icon fab fa-facebook"></i
+            ></span>
+            <span
+              class="flex justify-center w-10 h-10 bg-white rounded-full  bg-opacity-10"
+              ><i class="small-icon fab fa-twitter"></i
+            ></span>
+            <span
+              class="flex justify-center w-10 h-10 bg-white rounded-full  bg-opacity-10"
+              ><i class="small-icon fab fa-telegram"></i
+            ></span>
+            <span
+              class="flex justify-center w-10 h-10 bg-white rounded-full  bg-opacity-10"
+              ><i class="small-icon fab fa-instagram"></i
+            ></span>
+          </div>
+          <p>باز طراحی شده از قالب های سایت راست چین</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
